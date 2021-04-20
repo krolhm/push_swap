@@ -6,7 +6,7 @@
 /*   By: rbourgea <rbourgea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 18:14:02 by rbourgea          #+#    #+#             */
-/*   Updated: 2021/04/14 19:57:16 by rbourgea         ###   ########.fr       */
+/*   Updated: 2021/04/19 18:04:27 by rbourgea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void bn_or_number_of_instructions(t_data *data)
 {
     if (data->show_number)
-        printf("\tNumber of Instructions: %d\n", data->instuctions);
+        printf("\t[%d Instructions]\n", data->instuctions);
     else
         printf("\n");
 }
@@ -44,7 +44,7 @@ void ok_or_ko(t_data *data)
     }
     if (data->color)
         printf("\033[0;32m");
-    printf("OK");
+    write(1, "OK", 2);
     bn_or_number_of_instructions(data);
 }
 
