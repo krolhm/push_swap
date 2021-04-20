@@ -12,44 +12,44 @@
 
 #include "push_swap.h"
 
-void ra(t_data *data)
+void	ra(t_data *data)
 {
-    int i;
-    int temp;
+	int i;
+	int temp;
 
-    i = data->spliter - 1;
-    if (data->spliter < 2)
-        return;
-    temp = data->list[i];
-    while (i > 0)
-    {
-        data->list[i] = data->list[i - 1];
-        i--;
-    }
-    data->list[i] = temp;
+	i = data->spliter - 1;
+	if (data->spliter < 2)
+		return ;
+	temp = data->list[i];
+	while (i > 0)
+	{
+		data->list[i] = data->list[i - 1];
+		i--;
+	}
+	data->list[i] = temp;
 }
 
-void rb(t_data *data)
+void	rb(t_data *data)
 {
-    int i;
-    int temp;
+	int i;
+	int temp;
 
-    i = data->spliter;
-    if (data->size - data->spliter < 2)
-        return;
-    temp = data->list[i];
-    while (i < data->size - 1)
-    {
-        data->list[i] = data->list[i + 1];
-        i++;
-    }
-    data->list[i] = temp;
+	i = data->spliter;
+	if (data->size - data->spliter < 2)
+		return ;
+	temp = data->list[i];
+	while (i < data->size - 1)
+	{
+		data->list[i] = data->list[i + 1];
+		i++;
+	}
+	data->list[i] = temp;
 }
 
-void rr(t_data *data)
+void	rr(t_data *data)
 {
-    data->aaa = 1;
-    ra(data);
-    rb(data);
-    data->aaa = 0;
+	data->aaa = 1;
+	ra(data);
+	rb(data);
+	data->aaa = 0;
 }
